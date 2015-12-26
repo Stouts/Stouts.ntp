@@ -1,6 +1,7 @@
 ---
 
 - include_vars: "{{ansible_os_family}}.yml"
+- include_vars: "{{ansible_distribution}}.yml"
 
 - name: Install NTP (Debian)
   apt: name=ntp state=installed
@@ -12,3 +13,4 @@
 
 - name: Ensure NTP is running and enabled at system start.
   service: name={{ ntp_daemon }} state=started enabled=yes
+  when: ntp_service
