@@ -1,5 +1,5 @@
 ---
 
-- include: ntp.yml
+- import_tasks: ntp.yml
   when: ntp_enabled
   tags: [ntp]
