@@ -3,11 +3,13 @@
 - include_vars: "{{ansible_os_family}}.yml"
 
 - name: Install NTP (Debian)
-  apt: name=ntp
+  apt:
+    name: ntp
   when: ansible_os_family == 'Debian'
 
 - name: Install NTP (RedHat)
-  yum: name=ntp
+  yum:
+    name: ntp
   when: ansible_os_family == 'RedHat'
 
 - name: Ensure NTP is running and enabled at system start.
