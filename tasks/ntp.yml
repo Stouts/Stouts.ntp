@@ -5,6 +5,7 @@
 - name: Install NTP (Debian)
   apt:
     name: ntp
+    update_cache: true
   when: ansible_os_family == 'Debian'
 
 - name: Install NTP (RedHat)
